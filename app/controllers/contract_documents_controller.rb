@@ -7,9 +7,18 @@ class ContractDocumentsController < ApplicationController
   end
 
   def index
-    @contracts = Contract.all
-    document = Pdfmonkey::Document.fetch(contract.pdfmonkey_id)
+    @contracts = Contract.all.last
+    document = Pdfmonkey::Document.fetch(@contracts.pdfmonkey_id)
+
+    # redirect_to document.download_url
+  end
+
+  def download
+    @contracts = Contract.all.last
+    document = Pdfmonkey::Document.fetch(@contracts.pdfmonkey_id)
 
     redirect_to document.download_url
   end
-end
+
+
+end   

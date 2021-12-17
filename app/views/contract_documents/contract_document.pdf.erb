@@ -31,3 +31,5 @@
 
   get 'download', action: :download, controller: 'contract_documents'
  -->
+
+ <%= link_to "PDF", contract_documents_path(format: :pdf), class: 'btn btn-primary' %>

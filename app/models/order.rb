@@ -1,4 +1,5 @@
 class Order < ApplicationRecord
+  DOCUMENT_TEMPLATE_ID='E939699A-11D0-4B00-8F61-BA5F55F670A0'
 	after_commit :generate_pdf
 
   private
